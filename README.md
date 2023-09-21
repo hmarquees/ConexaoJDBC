@@ -1,8 +1,8 @@
-## Getting Started
+## Sobre
 
 O objetivo deste projeto no VS Code é mostrar uma forma de realizar conexão com banco de dados MySQL e realizar inserções e recuperações de dados.
 
-## Folder Structure
+## Estrutura dos Diretórios
 
 O workspace contém cinco diretórios, sendo:
 
