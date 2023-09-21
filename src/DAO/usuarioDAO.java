@@ -31,7 +31,7 @@ public class usuarioDAO {
     }
 
     public void consultar_usuario(usuario usuario) {
-        //usuario pessoa1 = new usuario();
+        
         String query = "SELECT cpf, nome, email, senha FROM usuario WHERE cpf = '" + usuario.getCpf() + "'";
 
         conexao nova_conexao = new conexao();
@@ -51,7 +51,6 @@ public class usuarioDAO {
             
         } catch (SQLException erro_consulta_usuario) {
             System.out.println("Erro ao consultar o usuario: " + erro_consulta_usuario.getMessage());
-            //erro_consulta_usuario.printStackTrace();
         }
 
     }
