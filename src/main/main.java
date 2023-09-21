@@ -79,11 +79,11 @@ public class main {
                     System.out.print("Informe o código do produto: ");
                     produto.setCodigo(ler.nextInt());
 
-                    produto.consultar_produto(produto);
+                    produtoDAO.consultar_produto(produto);
 
                     System.out.print("\n\nCódigo: " + produto.getCodigo()
                                 + "\nDescrição: " + produto.getDescricao()
-                                + "\nValor: R$" + produto.getValor();
+                                + "\nValor: R$" + produto.getValor());
                 }
                 break;
 
