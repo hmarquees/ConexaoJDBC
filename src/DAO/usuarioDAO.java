@@ -25,6 +25,7 @@ public class usuarioDAO {
             preparar.setString(3, usuario.getEmail());
             preparar.setString(4, usuario.getSenha());
             preparar.execute();
+            System.out.println("Usuário cadastrado!");
         } catch (SQLException erro_cadastrar_usuario) {
             System.out.println("Erro ao cadastrar usuário no banco de dados!\n" + erro_cadastrar_usuario.getMessage());
         }
@@ -54,4 +55,42 @@ public class usuarioDAO {
         }
 
     }
+
+    public void atualizar_usuario(usuario usuario) {
+        String query = "UPDATE usuario SET nome = ?, email = ?, senha = ? WHERE cpf = ?";
+
+        conexao nova_conexao = new conexao();
+        Connection conectar = nova_conexao.getConexao();
+        PreparedStatement preparar = null;
+
+        try {
+            preparar = conectar.prepareStatement(query);
+            preparar.setString(1, usuario.getNome());
+            preparar.setString(2, usuario.getEmail());
+            preparar.setString(3, usuario.getSenha());
+            preparar.setString(4, usuario.getCpf());
+            preparar.execute();
+            System.out.println("Usuário atualizado!");
+        } catch (SQLException erro_atualizar_usuario) {
+            System.out.println("Erro ao atualizar o usuário!\n" + erro_atualizar_usuario.getMessage());
+        }
+    }
+
+    public void excluir_usuario(usuario usuario) {
+        String query = "DELETE FROM usuario WHERE cpf = ?";
+
+        conexao nova_conexao = new conexao();
+        Connection conectar = nova_conexao.getConexao();
+        PreparedStatement preparar = null;
+
+        try {
+            preparar = conectar.prepareStatement(query);
+            preparar.setString(1, usuario.getCpf());
+            preparar.execute();
+            System.out.println("Usuário excluído!");
+        } catch (SQLException erro_excluir_usuario) {
+            System.out.println("Erro ao excluir o usuário!\n" + erro_excluir_usuario.getMessage());
+        }
+    }
+
 }

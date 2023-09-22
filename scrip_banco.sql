@@ -1,0 +1,16 @@
+CREATE DATABASE test;
+
+USE test;
+
+CREATE TABLE usuario (
+    cpf CHAR(14) PRIMARY KEY,
+    nome VARCHAR(80) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    senha VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE produto (
+    codigo INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR(80) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL
+);
